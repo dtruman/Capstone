@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{496ACBA2-308D-4C92-B81C-A684BA744179}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Capstone</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>EDITOR_ON;DEBUG_PATHING_ON;DEBUG_MENU_ON;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\ExternalDependencies\zExternalDependencies\bullet-2.82-r2704\bullet-2.82-r2704\src;$(SolutionDir)..\Engine;$(SolutionDir)..\ExternalDependencies\zExternalDependencies\glm\glm;$(SolutionDir)..\ExternalDependencies\zExternalDependencies\Qt\include;$(SolutionDir)..\ExternalDependencies\zExternalDependencies\assimp\Include;$(SolutionDir)..\ExternalDependencies\zExternalDependencies\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\ExternalDependencies\zExternalDependencies\bullet-2.82-r2704\bullet-2.82-r2704\lib;$(SolutionDir)..\ExternalDependencies\zExternalDependencies\assimp\Library;$(SolutionDir)..\ExternalDependencies\zExternalDependencies\Qt\lib;$(SolutionDir)..\ExternalDependencies\zExternalDependencies\glew\lib;$(SolutionDir)Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>BulletDynamics_vs2010_debug.lib;BulletCollision_vs2010_debug.lib;LinearMath_vs2010_debug.lib;assimp.lib;PhysicsGui.lib;Engine.lib;opengl32.lib;QtCored4.lib;QtGuid4.lib;QtOpenGLd4.lib;glew32d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="AIComponent.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="InputComponent.h" />
+    <ClInclude Include="MeWidg.h" />
+    <ClInclude Include="MyGLWindow.h" />
+    <ClInclude Include="PathComponent.h" />
+    <ClInclude Include="PlayerComponent.h" />
+    <ClInclude Include="ScriptComponent.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AIComponent.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="InputComponent.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MeWidg.cpp" />
+    <ClCompile Include="MeWidg_moc.cpp" />
+    <ClCompile Include="MyGLWindow.cpp" />
+    <ClCompile Include="MyGLWindow_moc.cpp" />
+    <ClCompile Include="PathComponent.cpp" />
+    <ClCompile Include="PlayerComponent.cpp" />
+    <ClCompile Include="ScriptComponent.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ComponentFragment.glsl" />
+    <None Include="ComponentVertex.glsl" />
+    <None Include="DeferredPassFrag.glsl" />
+    <None Include="DeferredPassVert.glsl" />
+    <None Include="Shaders\CameraFragShader.glsl" />
+    <None Include="Shaders\CameraVertShader.glsl" />
+    <None Include="Shaders\FragmentShader.glsl" />
+    <None Include="Shaders\VertexShader.glsl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
